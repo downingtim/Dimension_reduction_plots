@@ -1,0 +1,395 @@
+---
+title: "tensor"
+---
+
+
+```{r}
+#install.packages("knitr")
+library(knitr)
+
+# Multiple plot function
+multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+# Make a list from the ... arguments and plotlist
+  plots <- c(list(...), plotlist)
+  numPlots = length(plots)
+  # If layout is NULL, then use 'cols' to determine layout
+  if (is.null(layout)) { # Make the panel
+  # ncol: Number of columns of plots
+  # nrow: Number of rows needed, calculated from # of cols
+  layout <- matrix(seq(1, cols * ceiling(numPlots/cols)),
+  ncol = cols, nrow = ceiling(numPlots/cols))}
+
+    if (numPlots==1) { print(plots[[1]]) }
+    else { # Set up the page
+      grid.newpage()
+       pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
+      # Make each plot, in the correct location
+      for (i in 1:numPlots) { # Get the i,j matrix positions of the regions that contain this subplot
+        matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
+        print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,layout.pos.col = matchidx$col)) }
+     }
+}
+
+
+### Figure 1 ###
+
+library("gplots")
+yy <- 1:200 + rnorm(200,1,20)
+xx <- matrix(yy**2, 10, 20)
+
+png("test2.png", width=1500, height=1300) #red
+heatmap.2(matrix(yy**2, 10, 20), Colv=NA, labRow=NA, labCol=F, scale="row", 
+        xlab=NULL, ylab=NULL, col=colorRampPalette(c("red", "pink"))(256),  
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none",
+        RowSideColors = c("blue","orange","blue","orange","blue","orange",
+               "blue","orange","blue","orange"),
+        ColSideColors=  rep(c("black"), 20))
+dev.off()
+
+png("test3.png", width=1500, height=1300)  # green
+heatmap.2(matrix(338:51 + rnorm(288,10,10) + 20, 12, 24), Colv=NA, labRow=NA,
+          labCol=F, scale="row", xlab=NULL, ylab=NULL,
+          col=colorRampPalette(c("darkgreen", "lightgreen"))(256), 
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none",
+        RowSideColors = rep(c("blue"),12), ColSideColors=  rep(c("black"), 24))
+dev.off()
+
+png("test3.png", width=1500, height=1300)  # purple
+heatmap.2(matrix((11:252)*exp(2) -  rnorm(242, 10, (1:242)*exp(1)),11,22),
+          Colv=NA, labRow=NA, labCol=F, scale="row", xlab=NULL, ylab=NULL,
+          col=colorRampPalette(c("purple", "white"))(256), 
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none",
+        RowSideColors = rep(c("blue"),11), ColSideColors=  rep(c("black"), 22))
+dev.off()
+
+# grey
+heatmap.2(matrix((1:200)*exp(2) -  rnorm(200, 1, (1:242)*exp(.1)),10,20),
+          Colv=NA, labRow=NA, labCol=F, scale="row", xlab=NULL, ylab=NULL,
+          col=colorRampPalette(c("black", "white"))(256), 
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none",
+        RowSideColors = rep(c("blue"),10), ColSideColors=  rep(c("black"), 20))
+
+# grey, no legend
+heatmap.2(matrix((11:210)*exp(1.9) -  rnorm(200, 1.2, (1:242)*exp(.1)),10,20),
+          Colv=NA, labRow=NA, labCol=F, scale="row", xlab=NULL, ylab=NULL,
+          col=colorRampPalette(c("black", "white"))(256), 
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none" )
+
+## end figure 1 ###
+## ######
+
+
+##### figure 2
+##### 
+
+# make a list of 4 tables 
+
+#install.packages("pracma")
+library(pracma)
+#install.packages("mixOmics")
+library(mixOmics)
+#install.packages("paletteer")
+library(paletteer)
+# the below is based on the mixOmics tutorial
+
+##### now for all 4 datasets ####
+
+# DNA genotype data
+x1 <-           abs(0.3+ round(rands(n =100, N=29, r=1) +
+                                 rnorm(3000,0,0.1),0))
+x1 <- cbind(x1, abs(0.4+ round(rands(n =100, N=35, r=1) +
+                                 rnorm(3600,0.1,0.1),0)))
+x1 <- cbind(x1, abs(0.5+ round(rands(n =100, N=23, r=1) +
+                                 rnorm(2400,0.6,0.1),0)))
+x1 <- cbind(x1, abs(0.6 + round(rands(n =100, N= 9, r=1) +
+                                  rnorm(1000,0.7,0.3),0)))
+
+# RNA expression
+x2 <-           rands(n =100, N=29, r =  4) + rnorm(3000, 0,1)
+x2 <- cbind(x2, rands(n =100, N=35, r = 11) + rnorm(3600, 2,1))
+x2 <- cbind(x2, rands(n =100, N=23, r = 11) + rnorm(2400,-2,1))
+x2 <- cbind(x2, rands(n =100, N= 9, r = 11) + rnorm(1000,-4,1))
+
+# Protein-binding data
+x3 <-           rands(n =100, N=29, r =  4) + rnorm(3000, 10,5)
+x3 <- cbind(x3, rands(n =100, N=35, r = 11) + rnorm(3600, 22,5))
+x3 <- cbind(x3, rands(n =100, N=23, r = 11) + rnorm(2400,-12,5))
+x3 <- cbind(x3, rands(n =100, N= 9, r = 11) + rnorm(1000,-22,5))
+
+# INFg activity data
+x4 <-           rands(n =100, N=29, r =  4) + rnorm(3000, 30,11)
+x4 <- cbind(x4, rands(n =100, N=35, r = 11) + rnorm(3600, 32,11))
+x4 <- cbind(x4, rands(n =100, N=23, r = 11) + rnorm(2400,-32,11))
+x4 <- cbind(x4, rands(n =100, N= 9, r = 11) + rnorm(1000,-62,11))
+
+# put together as list of tables # I hate lists
+list1 <- list(DNA=t(x1), RNA=t(x2), Binding=t(x3), INFg=t(x4))
+
+# add unique sample and feature names
+colnames(list1$DNA) <- 1:100       # unique DNA genotype feature names
+rownames(list1$DNA) <- 101:200     # unique sample names - DNA genotypes
+colnames(list1$RNA) <- 201:300     # unique RNA expression feature names
+rownames(list1$RNA) <- 101:200     # unique sample names - RNA expression
+colnames(list1$Binding) <- 401:500 # unique protein-binding feature names
+rownames(list1$Binding) <- 101:200 # unique sample names - protein binding
+colnames(list1$INFg) <- 601:700    # unique INFg feature names
+rownames(list1$INFg) <- 101:200    # unique sample names - INFg activity
+# str(list1) # check
+
+# make labels for our 4 groups, A, B, C and D
+fac1 <- c(as.factor(rep("A",30)),as.factor(rep("B",36)),
+          as.factor(rep("C",24)),as.factor(rep("D",10))) # groups
+# str(fac1) # check
+
+# make design matrix for the omics datasets
+design <- matrix(0.1, ncol = length(list1), nrow = length(list1), 
+                dimnames = list(names(list1), names(list1)))
+diag(design) <- 0 # set diagnonals to zero
+
+# perform PLS-DA with 5 components
+diablo1 <- block.plsda(list1, fac1, ncomp = 5, design = design)
+
+# The data is random so it has low predictive power 
+#diablo2 = perf(diablo1, validation = 'Mfold',folds = 10, nrepeat = 10)
+#ncomp <- diablo2$choice.ncomp$WeightedVote["Overall.BER","centroids.dist"]
+#str(ncomp) # 2 components
+
+# make list of parameters for each omic type, arbitrarily set here
+list.kpX <- list(DNA =c(8,4), RNA=c(8,4),Binding=c(8,4),INFg=c(8,4))
+diablo3 <- block.splsda(list1, fac1, ncomp = 4, 
+                            keepX = list.kpX, design = design)
+#str(diablo3)
+# sample similarities
+plotIndiv(diablo3, ind.names = F, legend = T,
+        col.per.group=c("grey","pink2","palegreen","lightblue1"),
+        style="ggplot2", pch=1:4,  ellipse=T, title="")
+
+# feature similarities
+plotArrow(diablo3, ind.names = F, legend  = T)
+
+circosPlot(diablo3, cutoff=0.9, line=T, color.cor=c("chocolate3","grey20"),
+          color.blocks =c("black","red","green","blue"), size.labels=1.5,
+          margin=c(8,20))
+
+# plot figure 2C of network for -0.7 =< r >= 0.7
+par(mfrow=c(1,1))
+network(diablo3, blocks = c(1,2,3,4), cutoff = 0.9, alpha.node = 0.5,
+        color.node = c("grey","pink2","palegreen","lightblue1"), 
+        save = 'png', name.save = 'plsda_2a', cex.node.name = 0.5)
+
+# plot figure 2D of heatmap
+par(mfrow=c(1,1))
+tiff("plsda3-2.tiff", width = 777, height = 666)
+cimDiablo(diablo3, color.blocks=c("grey","pink2","palegreen","lightblue1"),
+          color=paletteer_c("ggthemes::Red-Blue Diverging", 60),transpose=T,
+          comp = 1, margin=c(8,20), legend.position = "topright")
+dev.off()
+
+##### now with a pair only ####
+
+# make list with RNA expression and protein binding data only
+list2 <- list(RNA=t(x2), Binding=t(x3)) 
+colnames(list2$RNA) <- 201:300      # unique RNA expression feature names
+rownames(list2$RNA) <- 101:200      # unique RNA expression sample names
+colnames(list2$Binding) <- 401:500  # unique protein binding feature names
+rownames(list2$Binding) <- 101:200  # unique protein binding sample names
+
+# make design matrix for the omics datasets
+design <- matrix(0.1, ncol = length(list2), nrow = length(list2), 
+                dimnames = list(names(list2), names(list2)))
+diag(design) <- 0
+
+# perform PLS-DA with 2 components
+diablo1 <- block.plsda(list2, fac1, ncomp = 2, design = design)
+
+# make list of parameters for each omic type, arbitrarily set here
+list.kpX <- list(RNA=c(25,10),Binding=c(25,10))
+diablo3 <- block.splsda(list2, fac1, ncomp = 2, scale=F,
+                            keepX = list.kpX, design = design)
+#typeof(diablo3)
+#str(diablo3)
+
+# sample similarities
+plotIndiv(diablo3, ind.names = F, legend = T,
+          col.per.group=c("black","red","green","blue"), style="ggplot2",
+          pch=1:4,  ellipse=T, title="")
+
+# circos plot 
+circosPlot(diablo3, cutoff=0.9, line=T, color.cor=c("chocolate3","grey20"),
+          color.blocks =c("black","red"), size.labels=1.5)
+
+# plot figure 2A of network for -0.7 =< r >= 0.7
+par(mfrow=c(1,1))
+network(diablo3, blocks = c(1,2), cutoff = 0.7, show.color.key=T, 
+        color.node = c('pink2', 'palegreen'), alpha.node = 0.5,
+        save = 'png', name.save = 'plsda_2a', cex.node.name = 0.5)
+
+# plot figure 2B of network for -0.7 =< r >= 0.7
+tiff("plsda_2b.tiff", width = 777, height = 666)
+cimDiablo(diablo3, color.blocks = c("pink2","palegreen"),  
+         color=paletteer_c("ggthemes::Red-Blue Diverging", 120),transpose=T,
+          comp = 1, margin=c(8,20), legend.position = "topright")
+dev.off()
+
+#################################################
+
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### 
+### ### ### ### ### ### ### ### Figure 3 ### ### ### ### ### ### ### ### 
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### 
+
+# make a list of 3 tables 
+# data is added row-by-row
+
+d1 <- c(round(runif(3000, 0,1)),  round(runif(3600, 0,0.9)),
+        round(runif(2400, 0,0.8)),round(runif(1000, 0,0.6))) # genotype data
+x1 <- matrix(d1, nrow=100, ncol=100)
+d2 <- c(round(rnorm(3000, -1,5)),  round(rnorm(3600, 1,0.2)),
+        round(rnorm(2400, 0,0.8)),round(rnorm(1000, -0.6,2)))
+      # normalised gene expression
+x2 <- matrix(d2, nrow=100, ncol=100)
+d3 <- c(round(rnorm(3000, 10,1)),  round(rnorm(3600,11,9)),
+        round(rnorm(2400, 12,0.8)),round(rnorm(1000, 13,0.6))) # binding data
+x3 <- matrix(d3, nrow=100, ncol=100)
+d4 <- c(round(rnorm(3000, 20,4)),  round(rnorm(3600, 18,4.9)),
+        round(rnorm(2400, 21,4.8)),round(rnorm(1000, 23,2.6)))
+      # immune response INFg
+x4 <- matrix(d4, nrow=100, ncol=100)
+list1 <- list(DNA=x1, RNA=x2, Binding=x3, INFg=x4)
+str(list1)
+
+#install.packages("omicade4")
+library(omicade4)
+mcia1 <- mcia(list1, svd=T)
+colcode <- c(rep("A",30), rep("B",36), rep("C",24), rep("D",10))
+str(colcode)
+pdf("Figure2_mcia.pdf",width=7, height=7)
+plot(mcia1, sample.color=as.factor(colcode), sample.lab=F, sample.legend=F,
+     df.color=1:4)
+dev.off()
+
+### ### ### ### ### ### 
+
+#install.packages("r.jive")
+library(r.jive)
+j1 <- jive(list1)
+summary(j1)
+r.jive::showVarExplained(j1)
+plot.jive(j1,type="heat")
+
+# devtools::install_github("idc9/r_jive")
+library(ajive)
+# sample a toy dataset with true joint rank of 1
+blocks <- sample_toy_data(n=200, dx=100, dy=500)
+str(blocks) # list with 2 matrices 
+data_blocks_heatmap(blocks, show_color_bar=FALSE)
+initial_signal_ranks <- c(2, 3) # set by looking at scree plots
+jive_results <- ajive(blocks, initial_signal_ranks, 
+                      n_wedin_samples = 100, n_rand_dir_samples = 100)
+jive_results$joint_rank # estimated joint rank
+decomposition_heatmaps(blocks, jive_results)
+#  AJIVE separates the joint and
+#  individual signals for this toy data set.
+
+data_blocks_heatmap(list1, show_color_bar=T)
+str(list1)
+jive_results <- ajive(list1, c(4,2,3,4), n_wedin_samples = 100,
+                      n_rand_dir_samples = 100)
+str(jive_results)
+get_block_scores(jive_results, 2, "joint", normalized=T)
+
+jive_results$joint_rank # estimated joint rank
+pdf("Figure2_ajive.pdf",width=8, height=8)
+decomposition_heatmaps(list1, jive_results)
+dev.off()
+
+### ### ### ### ### ### ### ### ### ### ### ### ### ### 
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### 
+
+### figure 4 ####
+library(grid) 
+
+# t1 
+png("x.png", width=1500, height=1300) #red
+yy <- 1:2000 + rnorm(2000,1,200)
+xx <- matrix(yy**2, 40, 50)
+heatmap.2(xx, Colv=NA, labRow=NA, labCol=F, scale="row", xlab=NULL,
+          ylab=NULL, col=colorRampPalette(c("red", "pink"))(256),  
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none",
+        RowSideColors = rep(c("red","black","green","purple"),10),
+        ColSideColors =colorRampPalette(c("black", "grey"))(50))
+dev.off()
+
+png("y.png", width=1900, height=1300) #red # t2 
+yy <- 1:2800 + rnorm(2800,1,100)
+xx <- matrix(yy**2, 40, 70)
+heatmap.2(xx, Colv=NA, labRow=NA, labCol=F, scale="row", xlab=NULL,
+          ylab=NULL, col=colorRampPalette(c("darkorange", "pink"))(256),  
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none",
+        RowSideColors = rep(c("red","black","green","purple"),10),
+        ColSideColors =colorRampPalette(c("darkgray", "lightgrey"))(70))
+dev.off()
+
+png("z.png", width=1800, height=1300) #red # t3 
+yy <- 1:3440 + rnorm(3440,11,100)
+xx <- matrix(yy**2, 40, 86)
+heatmap.2(xx, Colv=NA, labRow=NA, labCol=F, scale="row", xlab=NULL,
+          ylab=NULL, col=colorRampPalette(c("yellow", "white"))(256),  
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none",
+        RowSideColors = rep(c("red","black","green","purple"),10),
+        ColSideColors =colorRampPalette(c("black", "lightgrey"))(86))
+dev.off()
+
+png("a.png", width=2500, height=2500) #red # t4
+yy <- 1:3600 + rnorm(3600,11,180)
+xx <- matrix(yy**2, 40, 90)
+heatmap.2(xx, Colv=NA, labRow=NA, labCol=F, scale="row", xlab=NULL,
+          ylab=NULL, col=colorRampPalette(c("darkgreen", "black"))(256),  
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none",
+        RowSideColors = rep(c("red","black","green","purple"),10),
+        ColSideColors =colorRampPalette(c("black", "white"))(90))
+dev.off()
+
+png("t.png", width=800, height=800) #red # t5
+yy <- 1:100 + rnorm(100,11,220)
+xx <- matrix(yy**2, 10, 10)
+heatmap.2(xx, Colv=NA, labRow=NA, labCol=F, scale="row", xlab=NULL,
+          ylab=NULL, col=colorRampPalette(c("lightgreen", "red"))(256),  
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none",
+        RowSideColors = rep(c("lightgrey"),10),
+        ColSideColors =colorRampPalette(c("black", "white"))(10))
+dev.off()
+
+png("u.png", width=800, height=1300) #red # t6
+yy <- 1:400 + rnorm(400,11,180)
+xx <- matrix(yy**2, 40, 10)
+heatmap.2(xx, Colv=NA, labRow=NA, labCol=F, scale="row", xlab=NULL,
+          ylab=NULL, col=colorRampPalette(c("blue", "purple"))(256),  
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none",
+        RowSideColors = rep(c("red","black","green","purple"),10),
+        ColSideColors =colorRampPalette(c("black", "white"))(10))
+dev.off()
+
+png("v.png", width=800, height=1600) #red # t7
+yy <- 1:990 + rnorm(990,11,220)
+xx <- matrix(yy**2, 90, 11)
+heatmap.2(xx, Colv=NA, labRow=NA, labCol=F, scale="row", xlab=NULL,
+          ylab=NULL, col=colorRampPalette(c("purple", "pink"))(256),  
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none",
+        RowSideColors = rep(c("lightgrey"),90),
+        ColSideColors =colorRampPalette(c("black", "white"))(11))
+dev.off()
+
+png("w.png", width=800, height=1600) #red # t7
+yy <- 1:50 + rnorm(50,11,220)
+xx <- matrix(yy**2, 5, 10)
+heatmap.2(xx, Colv=NA, labRow=NA, labCol=F, scale="row", xlab=NULL,
+          ylab=NULL, col=colorRampPalette(c("black", "red"))(256),  
+        sepcolor="white", trace=c("none"), key=F, dendrogram="none",
+        RowSideColors = colorRampPalette(c("red", "blue"))(5),
+        ColSideColors =colorRampPalette(c("darkgrey", "lightgrey"))(10))
+dev.off()
+### end
+
+```
+
+
