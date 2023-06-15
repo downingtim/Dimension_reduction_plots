@@ -1,5 +1,6 @@
 ---
-title: "tensor"
+title: "Correlation-based dimension reduction R code"
+output: pdf_document
 ---
 
 

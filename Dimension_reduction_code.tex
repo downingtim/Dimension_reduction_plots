@@ -1,0 +1,1189 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Correlation-based dimension reduction R code},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Correlation-based dimension reduction R code}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#install.packages("knitr")}
+\FunctionTok{library}\NormalTok{(knitr)}
+
+\CommentTok{\# Multiple plot function}
+\NormalTok{multiplot }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(..., }\AttributeTok{plotlist=}\ConstantTok{NULL}\NormalTok{, file, }\AttributeTok{cols=}\DecValTok{1}\NormalTok{, }\AttributeTok{layout=}\ConstantTok{NULL}\NormalTok{) \{}
+\CommentTok{\# Make a list from the ... arguments and plotlist}
+\NormalTok{  plots }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{list}\NormalTok{(...), plotlist)}
+\NormalTok{  numPlots }\OtherTok{=} \FunctionTok{length}\NormalTok{(plots)}
+  \CommentTok{\# If layout is NULL, then use \textquotesingle{}cols\textquotesingle{} to determine layout}
+  \ControlFlowTok{if}\NormalTok{ (}\FunctionTok{is.null}\NormalTok{(layout)) \{ }\CommentTok{\# Make the panel}
+  \CommentTok{\# ncol: Number of columns of plots}
+  \CommentTok{\# nrow: Number of rows needed, calculated from \# of cols}
+\NormalTok{  layout }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, cols }\SpecialCharTok{*} \FunctionTok{ceiling}\NormalTok{(numPlots}\SpecialCharTok{/}\NormalTok{cols)),}
+  \AttributeTok{ncol =}\NormalTok{ cols, }\AttributeTok{nrow =} \FunctionTok{ceiling}\NormalTok{(numPlots}\SpecialCharTok{/}\NormalTok{cols))\}}
+
+    \ControlFlowTok{if}\NormalTok{ (numPlots}\SpecialCharTok{==}\DecValTok{1}\NormalTok{) \{ }\FunctionTok{print}\NormalTok{(plots[[}\DecValTok{1}\NormalTok{]]) \}}
+    \ControlFlowTok{else}\NormalTok{ \{ }\CommentTok{\# Set up the page}
+      \FunctionTok{grid.newpage}\NormalTok{()}
+       \FunctionTok{pushViewport}\NormalTok{(}\FunctionTok{viewport}\NormalTok{(}\AttributeTok{layout =} \FunctionTok{grid.layout}\NormalTok{(}\FunctionTok{nrow}\NormalTok{(layout), }\FunctionTok{ncol}\NormalTok{(layout))))}
+      \CommentTok{\# Make each plot, in the correct location}
+      \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{numPlots) \{ }\CommentTok{\# Get the i,j matrix positions of the regions that contain this subplot}
+\NormalTok{        matchidx }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{which}\NormalTok{(layout }\SpecialCharTok{==}\NormalTok{ i, }\AttributeTok{arr.ind =} \ConstantTok{TRUE}\NormalTok{))}
+        \FunctionTok{print}\NormalTok{(plots[[i]], }\AttributeTok{vp =} \FunctionTok{viewport}\NormalTok{(}\AttributeTok{layout.pos.row =}\NormalTok{ matchidx}\SpecialCharTok{$}\NormalTok{row,}\AttributeTok{layout.pos.col =}\NormalTok{ matchidx}\SpecialCharTok{$}\NormalTok{col)) \}}
+\NormalTok{     \}}
+\NormalTok{\}}
+
+
+\DocumentationTok{\#\#\# Figure 1 }\AlertTok{\#\#\#}
+
+\FunctionTok{library}\NormalTok{(}\StringTok{"gplots"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'gplots' was built under R version 4.1.2
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'gplots'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:stats':
+## 
+##     lowess
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{yy }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{200} \SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{200}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{20}\NormalTok{)}
+\NormalTok{xx }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(yy}\SpecialCharTok{**}\DecValTok{2}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{)}
+
+\FunctionTok{png}\NormalTok{(}\StringTok{"test2.png"}\NormalTok{, }\AttributeTok{width=}\DecValTok{1500}\NormalTok{, }\AttributeTok{height=}\DecValTok{1300}\NormalTok{) }\CommentTok{\#red}
+\FunctionTok{heatmap.2}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(yy}\SpecialCharTok{**}\DecValTok{2}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{), }\AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }
+        \AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"pink"}\NormalTok{))(}\DecValTok{256}\NormalTok{),  }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{,}
+        \AttributeTok{RowSideColors =} \FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{,}\StringTok{"orange"}\NormalTok{,}\StringTok{"blue"}\NormalTok{,}\StringTok{"orange"}\NormalTok{,}\StringTok{"blue"}\NormalTok{,}\StringTok{"orange"}\NormalTok{,}
+               \StringTok{"blue"}\NormalTok{,}\StringTok{"orange"}\NormalTok{,}\StringTok{"blue"}\NormalTok{,}\StringTok{"orange"}\NormalTok{),}
+        \AttributeTok{ColSideColors=}  \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{), }\DecValTok{20}\NormalTok{))}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{png}\NormalTok{(}\StringTok{"test3.png"}\NormalTok{, }\AttributeTok{width=}\DecValTok{1500}\NormalTok{, }\AttributeTok{height=}\DecValTok{1300}\NormalTok{)  }\CommentTok{\# green}
+\FunctionTok{heatmap.2}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(}\DecValTok{338}\SpecialCharTok{:}\DecValTok{51} \SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{288}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{) }\SpecialCharTok{+} \DecValTok{20}\NormalTok{, }\DecValTok{12}\NormalTok{, }\DecValTok{24}\NormalTok{), }\AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{,}
+          \AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }\AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{,}
+          \AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"darkgreen"}\NormalTok{, }\StringTok{"lightgreen"}\NormalTok{))(}\DecValTok{256}\NormalTok{), }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{,}
+        \AttributeTok{RowSideColors =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{),}\DecValTok{12}\NormalTok{), }\AttributeTok{ColSideColors=}  \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{), }\DecValTok{24}\NormalTok{))}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{png}\NormalTok{(}\StringTok{"test3.png"}\NormalTok{, }\AttributeTok{width=}\DecValTok{1500}\NormalTok{, }\AttributeTok{height=}\DecValTok{1300}\NormalTok{)  }\CommentTok{\# purple}
+\FunctionTok{heatmap.2}\NormalTok{(}\FunctionTok{matrix}\NormalTok{((}\DecValTok{11}\SpecialCharTok{:}\DecValTok{252}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{exp}\NormalTok{(}\DecValTok{2}\NormalTok{) }\SpecialCharTok{{-}}  \FunctionTok{rnorm}\NormalTok{(}\DecValTok{242}\NormalTok{, }\DecValTok{10}\NormalTok{, (}\DecValTok{1}\SpecialCharTok{:}\DecValTok{242}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{exp}\NormalTok{(}\DecValTok{1}\NormalTok{)),}\DecValTok{11}\NormalTok{,}\DecValTok{22}\NormalTok{),}
+          \AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }\AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{,}
+          \AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"purple"}\NormalTok{, }\StringTok{"white"}\NormalTok{))(}\DecValTok{256}\NormalTok{), }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{,}
+        \AttributeTok{RowSideColors =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{),}\DecValTok{11}\NormalTok{), }\AttributeTok{ColSideColors=}  \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{), }\DecValTok{22}\NormalTok{))}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# grey}
+\FunctionTok{heatmap.2}\NormalTok{(}\FunctionTok{matrix}\NormalTok{((}\DecValTok{1}\SpecialCharTok{:}\DecValTok{200}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{exp}\NormalTok{(}\DecValTok{2}\NormalTok{) }\SpecialCharTok{{-}}  \FunctionTok{rnorm}\NormalTok{(}\DecValTok{200}\NormalTok{, }\DecValTok{1}\NormalTok{, (}\DecValTok{1}\SpecialCharTok{:}\DecValTok{242}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{exp}\NormalTok{(.}\DecValTok{1}\NormalTok{)),}\DecValTok{10}\NormalTok{,}\DecValTok{20}\NormalTok{),}
+          \AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }\AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{,}
+          \AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{, }\StringTok{"white"}\NormalTok{))(}\DecValTok{256}\NormalTok{), }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{,}
+        \AttributeTok{RowSideColors =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{),}\DecValTok{10}\NormalTok{), }\AttributeTok{ColSideColors=}  \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{), }\DecValTok{20}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Dimension_reduction_code_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# grey, no legend}
+\FunctionTok{heatmap.2}\NormalTok{(}\FunctionTok{matrix}\NormalTok{((}\DecValTok{11}\SpecialCharTok{:}\DecValTok{210}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{exp}\NormalTok{(}\FloatTok{1.9}\NormalTok{) }\SpecialCharTok{{-}}  \FunctionTok{rnorm}\NormalTok{(}\DecValTok{200}\NormalTok{, }\FloatTok{1.2}\NormalTok{, (}\DecValTok{1}\SpecialCharTok{:}\DecValTok{242}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{exp}\NormalTok{(.}\DecValTok{1}\NormalTok{)),}\DecValTok{10}\NormalTok{,}\DecValTok{20}\NormalTok{),}
+          \AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }\AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{,}
+          \AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{, }\StringTok{"white"}\NormalTok{))(}\DecValTok{256}\NormalTok{), }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{ )}
+
+\DocumentationTok{\#\# end figure 1 }\AlertTok{\#\#\#}
+\DocumentationTok{\#\# \#\#\#\#\#\#}
+
+
+\DocumentationTok{\#\#\#\#\# figure 2}
+\DocumentationTok{\#\#\#\#\# }
+
+\CommentTok{\# make a list of 4 tables }
+
+\CommentTok{\#install.packages("pracma")}
+\FunctionTok{library}\NormalTok{(pracma)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'pracma' was built under R version 4.1.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#install.packages("mixOmics")}
+\FunctionTok{library}\NormalTok{(mixOmics)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: MASS
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'MASS' was built under R version 4.1.2
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: lattice
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'lattice' was built under R version 4.1.2
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: ggplot2
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 4.1.2
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Loaded mixOmics 6.16.3
+## Thank you for using mixOmics!
+## Tutorials: http://mixomics.org
+## Bookdown vignette: https://mixomicsteam.github.io/Bookdown
+## Questions, issues: Follow the prompts at http://mixomics.org/contact-us
+## Cite us:  citation('mixOmics')
+\end{verbatim}
+
+\includegraphics{Dimension_reduction_code_files/figure-latex/unnamed-chunk-1-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#install.packages("paletteer")}
+\FunctionTok{library}\NormalTok{(paletteer)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'paletteer' was built under R version 4.1.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# the below is based on the mixOmics tutorial}
+
+\DocumentationTok{\#\#\#\#\# now for all 4 datasets \#\#\#\#}
+
+\CommentTok{\# DNA genotype data}
+\NormalTok{x1 }\OtherTok{\textless{}{-}}           \FunctionTok{abs}\NormalTok{(}\FloatTok{0.3}\SpecialCharTok{+} \FunctionTok{round}\NormalTok{(}\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=}\DecValTok{29}\NormalTok{, }\AttributeTok{r=}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+                                 \FunctionTok{rnorm}\NormalTok{(}\DecValTok{3000}\NormalTok{,}\DecValTok{0}\NormalTok{,}\FloatTok{0.1}\NormalTok{),}\DecValTok{0}\NormalTok{))}
+\NormalTok{x1 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x1, }\FunctionTok{abs}\NormalTok{(}\FloatTok{0.4}\SpecialCharTok{+} \FunctionTok{round}\NormalTok{(}\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=}\DecValTok{35}\NormalTok{, }\AttributeTok{r=}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+                                 \FunctionTok{rnorm}\NormalTok{(}\DecValTok{3600}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.1}\NormalTok{),}\DecValTok{0}\NormalTok{)))}
+\NormalTok{x1 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x1, }\FunctionTok{abs}\NormalTok{(}\FloatTok{0.5}\SpecialCharTok{+} \FunctionTok{round}\NormalTok{(}\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=}\DecValTok{23}\NormalTok{, }\AttributeTok{r=}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+                                 \FunctionTok{rnorm}\NormalTok{(}\DecValTok{2400}\NormalTok{,}\FloatTok{0.6}\NormalTok{,}\FloatTok{0.1}\NormalTok{),}\DecValTok{0}\NormalTok{)))}
+\NormalTok{x1 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x1, }\FunctionTok{abs}\NormalTok{(}\FloatTok{0.6} \SpecialCharTok{+} \FunctionTok{round}\NormalTok{(}\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=} \DecValTok{9}\NormalTok{, }\AttributeTok{r=}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+                                  \FunctionTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{,}\FloatTok{0.7}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}\DecValTok{0}\NormalTok{)))}
+
+\CommentTok{\# RNA expression}
+\NormalTok{x2 }\OtherTok{\textless{}{-}}           \FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=}\DecValTok{29}\NormalTok{, }\AttributeTok{r =}  \DecValTok{4}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{3000}\NormalTok{, }\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)}
+\NormalTok{x2 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x2, }\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=}\DecValTok{35}\NormalTok{, }\AttributeTok{r =} \DecValTok{11}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{3600}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\NormalTok{x2 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x2, }\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=}\DecValTok{23}\NormalTok{, }\AttributeTok{r =} \DecValTok{11}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{2400}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\NormalTok{x2 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x2, }\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=} \DecValTok{9}\NormalTok{, }\AttributeTok{r =} \DecValTok{11}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+
+\CommentTok{\# Protein{-}binding data}
+\NormalTok{x3 }\OtherTok{\textless{}{-}}           \FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=}\DecValTok{29}\NormalTok{, }\AttributeTok{r =}  \DecValTok{4}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{3000}\NormalTok{, }\DecValTok{10}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\NormalTok{x3 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x3, }\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=}\DecValTok{35}\NormalTok{, }\AttributeTok{r =} \DecValTok{11}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{3600}\NormalTok{, }\DecValTok{22}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+\NormalTok{x3 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x3, }\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=}\DecValTok{23}\NormalTok{, }\AttributeTok{r =} \DecValTok{11}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{2400}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{12}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+\NormalTok{x3 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x3, }\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=} \DecValTok{9}\NormalTok{, }\AttributeTok{r =} \DecValTok{11}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{22}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+
+\CommentTok{\# INFg activity data}
+\NormalTok{x4 }\OtherTok{\textless{}{-}}           \FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=}\DecValTok{29}\NormalTok{, }\AttributeTok{r =}  \DecValTok{4}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{3000}\NormalTok{, }\DecValTok{30}\NormalTok{,}\DecValTok{11}\NormalTok{)}
+\NormalTok{x4 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x4, }\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=}\DecValTok{35}\NormalTok{, }\AttributeTok{r =} \DecValTok{11}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{3600}\NormalTok{, }\DecValTok{32}\NormalTok{,}\DecValTok{11}\NormalTok{))}
+\NormalTok{x4 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x4, }\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=}\DecValTok{23}\NormalTok{, }\AttributeTok{r =} \DecValTok{11}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{2400}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{32}\NormalTok{,}\DecValTok{11}\NormalTok{))}
+\NormalTok{x4 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x4, }\FunctionTok{rands}\NormalTok{(}\AttributeTok{n =}\DecValTok{100}\NormalTok{, }\AttributeTok{N=} \DecValTok{9}\NormalTok{, }\AttributeTok{r =} \DecValTok{11}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{62}\NormalTok{,}\DecValTok{11}\NormalTok{))}
+
+\CommentTok{\# put together as list of tables \# I hate lists}
+\NormalTok{list1 }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\AttributeTok{DNA=}\FunctionTok{t}\NormalTok{(x1), }\AttributeTok{RNA=}\FunctionTok{t}\NormalTok{(x2), }\AttributeTok{Binding=}\FunctionTok{t}\NormalTok{(x3), }\AttributeTok{INFg=}\FunctionTok{t}\NormalTok{(x4))}
+
+\CommentTok{\# add unique sample and feature names}
+\FunctionTok{colnames}\NormalTok{(list1}\SpecialCharTok{$}\NormalTok{DNA) }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{100}       \CommentTok{\# unique DNA genotype feature names}
+\FunctionTok{rownames}\NormalTok{(list1}\SpecialCharTok{$}\NormalTok{DNA) }\OtherTok{\textless{}{-}} \DecValTok{101}\SpecialCharTok{:}\DecValTok{200}     \CommentTok{\# unique sample names {-} DNA genotypes}
+\FunctionTok{colnames}\NormalTok{(list1}\SpecialCharTok{$}\NormalTok{RNA) }\OtherTok{\textless{}{-}} \DecValTok{201}\SpecialCharTok{:}\DecValTok{300}     \CommentTok{\# unique RNA expression feature names}
+\FunctionTok{rownames}\NormalTok{(list1}\SpecialCharTok{$}\NormalTok{RNA) }\OtherTok{\textless{}{-}} \DecValTok{101}\SpecialCharTok{:}\DecValTok{200}     \CommentTok{\# unique sample names {-} RNA expression}
+\FunctionTok{colnames}\NormalTok{(list1}\SpecialCharTok{$}\NormalTok{Binding) }\OtherTok{\textless{}{-}} \DecValTok{401}\SpecialCharTok{:}\DecValTok{500} \CommentTok{\# unique protein{-}binding feature names}
+\FunctionTok{rownames}\NormalTok{(list1}\SpecialCharTok{$}\NormalTok{Binding) }\OtherTok{\textless{}{-}} \DecValTok{101}\SpecialCharTok{:}\DecValTok{200} \CommentTok{\# unique sample names {-} protein binding}
+\FunctionTok{colnames}\NormalTok{(list1}\SpecialCharTok{$}\NormalTok{INFg) }\OtherTok{\textless{}{-}} \DecValTok{601}\SpecialCharTok{:}\DecValTok{700}    \CommentTok{\# unique INFg feature names}
+\FunctionTok{rownames}\NormalTok{(list1}\SpecialCharTok{$}\NormalTok{INFg) }\OtherTok{\textless{}{-}} \DecValTok{101}\SpecialCharTok{:}\DecValTok{200}    \CommentTok{\# unique sample names {-} INFg activity}
+\CommentTok{\# str(list1) \# check}
+
+\CommentTok{\# make labels for our 4 groups, A, B, C and D}
+\NormalTok{fac1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{as.factor}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"A"}\NormalTok{,}\DecValTok{30}\NormalTok{)),}\FunctionTok{as.factor}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"B"}\NormalTok{,}\DecValTok{36}\NormalTok{)),}
+          \FunctionTok{as.factor}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"C"}\NormalTok{,}\DecValTok{24}\NormalTok{)),}\FunctionTok{as.factor}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"D"}\NormalTok{,}\DecValTok{10}\NormalTok{))) }\CommentTok{\# groups}
+\CommentTok{\# str(fac1) \# check}
+
+\CommentTok{\# make design matrix for the omics datasets}
+\NormalTok{design }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FloatTok{0.1}\NormalTok{, }\AttributeTok{ncol =} \FunctionTok{length}\NormalTok{(list1), }\AttributeTok{nrow =} \FunctionTok{length}\NormalTok{(list1), }
+                \AttributeTok{dimnames =} \FunctionTok{list}\NormalTok{(}\FunctionTok{names}\NormalTok{(list1), }\FunctionTok{names}\NormalTok{(list1)))}
+\FunctionTok{diag}\NormalTok{(design) }\OtherTok{\textless{}{-}} \DecValTok{0} \CommentTok{\# set diagnonals to zero}
+
+\CommentTok{\# perform PLS{-}DA with 5 components}
+\NormalTok{diablo1 }\OtherTok{\textless{}{-}} \FunctionTok{block.plsda}\NormalTok{(list1, fac1, }\AttributeTok{ncomp =} \DecValTok{5}\NormalTok{, }\AttributeTok{design =}\NormalTok{ design)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Design matrix has changed to include Y; each block will be
+##             linked to Y.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# The data is random so it has low predictive power }
+\CommentTok{\#diablo2 = perf(diablo1, validation = \textquotesingle{}Mfold\textquotesingle{},folds = 10, nrepeat = 10)}
+\CommentTok{\#ncomp \textless{}{-} diablo2$choice.ncomp$WeightedVote["Overall.BER","centroids.dist"]}
+\CommentTok{\#str(ncomp) \# 2 components}
+
+\CommentTok{\# make list of parameters for each omic type, arbitrarily set here}
+\NormalTok{list.kpX }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\AttributeTok{DNA =}\FunctionTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{4}\NormalTok{), }\AttributeTok{RNA=}\FunctionTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{4}\NormalTok{),}\AttributeTok{Binding=}\FunctionTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{4}\NormalTok{),}\AttributeTok{INFg=}\FunctionTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+\NormalTok{diablo3 }\OtherTok{\textless{}{-}} \FunctionTok{block.splsda}\NormalTok{(list1, fac1, }\AttributeTok{ncomp =} \DecValTok{4}\NormalTok{, }
+                            \AttributeTok{keepX =}\NormalTok{ list.kpX, }\AttributeTok{design =}\NormalTok{ design)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Design matrix has changed to include Y; each block will be
+##             linked to Y.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#str(diablo3)}
+\CommentTok{\# sample similarities}
+\FunctionTok{plotIndiv}\NormalTok{(diablo3, }\AttributeTok{ind.names =}\NormalTok{ F, }\AttributeTok{legend =}\NormalTok{ T,}
+        \AttributeTok{col.per.group=}\FunctionTok{c}\NormalTok{(}\StringTok{"grey"}\NormalTok{,}\StringTok{"pink2"}\NormalTok{,}\StringTok{"palegreen"}\NormalTok{,}\StringTok{"lightblue1"}\NormalTok{),}
+        \AttributeTok{style=}\StringTok{"ggplot2"}\NormalTok{, }\AttributeTok{pch=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{,  }\AttributeTok{ellipse=}\NormalTok{T, }\AttributeTok{title=}\StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: The `guide` argument in `scale_*()` cannot be `FALSE`. This was deprecated in
+## ggplot2 3.3.4.
+## i Please use "none" instead.
+## i The deprecated feature was likely used in the mixOmics package.
+##   Please report the issue at
+##   <https://github.com/mixOmicsTeam/mixOmics/issues/>.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+\end{verbatim}
+
+\includegraphics{Dimension_reduction_code_files/figure-latex/unnamed-chunk-1-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# feature similarities}
+\FunctionTok{plotArrow}\NormalTok{(diablo3, }\AttributeTok{ind.names =}\NormalTok{ F, }\AttributeTok{legend  =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Dimension_reduction_code_files/figure-latex/unnamed-chunk-1-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{circosPlot}\NormalTok{(diablo3, }\AttributeTok{cutoff=}\FloatTok{0.9}\NormalTok{, }\AttributeTok{line=}\NormalTok{T, }\AttributeTok{color.cor=}\FunctionTok{c}\NormalTok{(}\StringTok{"chocolate3"}\NormalTok{,}\StringTok{"grey20"}\NormalTok{),}
+          \AttributeTok{color.blocks =}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{,}\StringTok{"red"}\NormalTok{,}\StringTok{"green"}\NormalTok{,}\StringTok{"blue"}\NormalTok{), }\AttributeTok{size.labels=}\FloatTok{1.5}\NormalTok{,}
+          \AttributeTok{margin=}\FunctionTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{20}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Dimension_reduction_code_files/figure-latex/unnamed-chunk-1-5.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# plot figure 2C of network for {-}0.7 =\textless{} r \textgreater{}= 0.7}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\FunctionTok{network}\NormalTok{(diablo3, }\AttributeTok{blocks =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{), }\AttributeTok{cutoff =} \FloatTok{0.9}\NormalTok{, }\AttributeTok{alpha.node =} \FloatTok{0.5}\NormalTok{,}
+        \AttributeTok{color.node =} \FunctionTok{c}\NormalTok{(}\StringTok{"grey"}\NormalTok{,}\StringTok{"pink2"}\NormalTok{,}\StringTok{"palegreen"}\NormalTok{,}\StringTok{"lightblue1"}\NormalTok{), }
+        \AttributeTok{save =} \StringTok{\textquotesingle{}png\textquotesingle{}}\NormalTok{, }\AttributeTok{name.save =} \StringTok{\textquotesingle{}plsda\_2a\textquotesingle{}}\NormalTok{, }\AttributeTok{cex.node.name =} \FloatTok{0.5}\NormalTok{)}
+
+\CommentTok{\# plot figure 2D of heatmap}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\FunctionTok{tiff}\NormalTok{(}\StringTok{"plsda3{-}2.tiff"}\NormalTok{, }\AttributeTok{width =} \DecValTok{777}\NormalTok{, }\AttributeTok{height =} \DecValTok{666}\NormalTok{)}
+\FunctionTok{cimDiablo}\NormalTok{(diablo3, }\AttributeTok{color.blocks=}\FunctionTok{c}\NormalTok{(}\StringTok{"grey"}\NormalTok{,}\StringTok{"pink2"}\NormalTok{,}\StringTok{"palegreen"}\NormalTok{,}\StringTok{"lightblue1"}\NormalTok{),}
+          \AttributeTok{color=}\FunctionTok{paletteer\_c}\NormalTok{(}\StringTok{"ggthemes::Red{-}Blue Diverging"}\NormalTok{, }\DecValTok{60}\NormalTok{),}\AttributeTok{transpose=}\NormalTok{T,}
+          \AttributeTok{comp =} \DecValTok{1}\NormalTok{, }\AttributeTok{margin=}\FunctionTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{20}\NormalTok{), }\AttributeTok{legend.position =} \StringTok{"topright"}\NormalTok{)}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\#\# now with a pair only \#\#\#\#}
+
+\CommentTok{\# make list with RNA expression and protein binding data only}
+\NormalTok{list2 }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\AttributeTok{RNA=}\FunctionTok{t}\NormalTok{(x2), }\AttributeTok{Binding=}\FunctionTok{t}\NormalTok{(x3)) }
+\FunctionTok{colnames}\NormalTok{(list2}\SpecialCharTok{$}\NormalTok{RNA) }\OtherTok{\textless{}{-}} \DecValTok{201}\SpecialCharTok{:}\DecValTok{300}      \CommentTok{\# unique RNA expression feature names}
+\FunctionTok{rownames}\NormalTok{(list2}\SpecialCharTok{$}\NormalTok{RNA) }\OtherTok{\textless{}{-}} \DecValTok{101}\SpecialCharTok{:}\DecValTok{200}      \CommentTok{\# unique RNA expression sample names}
+\FunctionTok{colnames}\NormalTok{(list2}\SpecialCharTok{$}\NormalTok{Binding) }\OtherTok{\textless{}{-}} \DecValTok{401}\SpecialCharTok{:}\DecValTok{500}  \CommentTok{\# unique protein binding feature names}
+\FunctionTok{rownames}\NormalTok{(list2}\SpecialCharTok{$}\NormalTok{Binding) }\OtherTok{\textless{}{-}} \DecValTok{101}\SpecialCharTok{:}\DecValTok{200}  \CommentTok{\# unique protein binding sample names}
+
+\CommentTok{\# make design matrix for the omics datasets}
+\NormalTok{design }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FloatTok{0.1}\NormalTok{, }\AttributeTok{ncol =} \FunctionTok{length}\NormalTok{(list2), }\AttributeTok{nrow =} \FunctionTok{length}\NormalTok{(list2), }
+                \AttributeTok{dimnames =} \FunctionTok{list}\NormalTok{(}\FunctionTok{names}\NormalTok{(list2), }\FunctionTok{names}\NormalTok{(list2)))}
+\FunctionTok{diag}\NormalTok{(design) }\OtherTok{\textless{}{-}} \DecValTok{0}
+
+\CommentTok{\# perform PLS{-}DA with 2 components}
+\NormalTok{diablo1 }\OtherTok{\textless{}{-}} \FunctionTok{block.plsda}\NormalTok{(list2, fac1, }\AttributeTok{ncomp =} \DecValTok{2}\NormalTok{, }\AttributeTok{design =}\NormalTok{ design)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Design matrix has changed to include Y; each block will be
+##             linked to Y.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# make list of parameters for each omic type, arbitrarily set here}
+\NormalTok{list.kpX }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\AttributeTok{RNA=}\FunctionTok{c}\NormalTok{(}\DecValTok{25}\NormalTok{,}\DecValTok{10}\NormalTok{),}\AttributeTok{Binding=}\FunctionTok{c}\NormalTok{(}\DecValTok{25}\NormalTok{,}\DecValTok{10}\NormalTok{))}
+\NormalTok{diablo3 }\OtherTok{\textless{}{-}} \FunctionTok{block.splsda}\NormalTok{(list2, fac1, }\AttributeTok{ncomp =} \DecValTok{2}\NormalTok{, }\AttributeTok{scale=}\NormalTok{F,}
+                            \AttributeTok{keepX =}\NormalTok{ list.kpX, }\AttributeTok{design =}\NormalTok{ design)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Design matrix has changed to include Y; each block will be
+##             linked to Y.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#typeof(diablo3)}
+\CommentTok{\#str(diablo3)}
+
+\CommentTok{\# sample similarities}
+\FunctionTok{plotIndiv}\NormalTok{(diablo3, }\AttributeTok{ind.names =}\NormalTok{ F, }\AttributeTok{legend =}\NormalTok{ T,}
+          \AttributeTok{col.per.group=}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{,}\StringTok{"red"}\NormalTok{,}\StringTok{"green"}\NormalTok{,}\StringTok{"blue"}\NormalTok{), }\AttributeTok{style=}\StringTok{"ggplot2"}\NormalTok{,}
+          \AttributeTok{pch=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{,  }\AttributeTok{ellipse=}\NormalTok{T, }\AttributeTok{title=}\StringTok{""}\NormalTok{)}
+
+\CommentTok{\# circos plot }
+\FunctionTok{circosPlot}\NormalTok{(diablo3, }\AttributeTok{cutoff=}\FloatTok{0.9}\NormalTok{, }\AttributeTok{line=}\NormalTok{T, }\AttributeTok{color.cor=}\FunctionTok{c}\NormalTok{(}\StringTok{"chocolate3"}\NormalTok{,}\StringTok{"grey20"}\NormalTok{),}
+          \AttributeTok{color.blocks =}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{,}\StringTok{"red"}\NormalTok{), }\AttributeTok{size.labels=}\FloatTok{1.5}\NormalTok{)}
+
+\CommentTok{\# plot figure 2A of network for {-}0.7 =\textless{} r \textgreater{}= 0.7}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\FunctionTok{network}\NormalTok{(diablo3, }\AttributeTok{blocks =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{cutoff =} \FloatTok{0.7}\NormalTok{, }\AttributeTok{show.color.key=}\NormalTok{T, }
+        \AttributeTok{color.node =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}pink2\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}palegreen\textquotesingle{}}\NormalTok{), }\AttributeTok{alpha.node =} \FloatTok{0.5}\NormalTok{,}
+        \AttributeTok{save =} \StringTok{\textquotesingle{}png\textquotesingle{}}\NormalTok{, }\AttributeTok{name.save =} \StringTok{\textquotesingle{}plsda\_2a\textquotesingle{}}\NormalTok{, }\AttributeTok{cex.node.name =} \FloatTok{0.5}\NormalTok{)}
+
+\CommentTok{\# plot figure 2B of network for {-}0.7 =\textless{} r \textgreater{}= 0.7}
+\FunctionTok{tiff}\NormalTok{(}\StringTok{"plsda\_2b.tiff"}\NormalTok{, }\AttributeTok{width =} \DecValTok{777}\NormalTok{, }\AttributeTok{height =} \DecValTok{666}\NormalTok{)}
+\FunctionTok{cimDiablo}\NormalTok{(diablo3, }\AttributeTok{color.blocks =} \FunctionTok{c}\NormalTok{(}\StringTok{"pink2"}\NormalTok{,}\StringTok{"palegreen"}\NormalTok{),  }
+         \AttributeTok{color=}\FunctionTok{paletteer\_c}\NormalTok{(}\StringTok{"ggthemes::Red{-}Blue Diverging"}\NormalTok{, }\DecValTok{120}\NormalTok{),}\AttributeTok{transpose=}\NormalTok{T,}
+          \AttributeTok{comp =} \DecValTok{1}\NormalTok{, }\AttributeTok{margin=}\FunctionTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{20}\NormalTok{), }\AttributeTok{legend.position =} \StringTok{"topright"}\NormalTok{)}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## null device 
+##           1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+
+\DocumentationTok{\#\#\# }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }
+\DocumentationTok{\#\#\# }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ Figure 3 }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }
+\DocumentationTok{\#\#\# }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }
+
+\CommentTok{\# make a list of 3 tables }
+\CommentTok{\# data is added row{-}by{-}row}
+
+\NormalTok{d1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{round}\NormalTok{(}\FunctionTok{runif}\NormalTok{(}\DecValTok{3000}\NormalTok{, }\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)),  }\FunctionTok{round}\NormalTok{(}\FunctionTok{runif}\NormalTok{(}\DecValTok{3600}\NormalTok{, }\DecValTok{0}\NormalTok{,}\FloatTok{0.9}\NormalTok{)),}
+        \FunctionTok{round}\NormalTok{(}\FunctionTok{runif}\NormalTok{(}\DecValTok{2400}\NormalTok{, }\DecValTok{0}\NormalTok{,}\FloatTok{0.8}\NormalTok{)),}\FunctionTok{round}\NormalTok{(}\FunctionTok{runif}\NormalTok{(}\DecValTok{1000}\NormalTok{, }\DecValTok{0}\NormalTok{,}\FloatTok{0.6}\NormalTok{))) }\CommentTok{\# genotype data}
+\NormalTok{x1 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(d1, }\AttributeTok{nrow=}\DecValTok{100}\NormalTok{, }\AttributeTok{ncol=}\DecValTok{100}\NormalTok{)}
+\NormalTok{d2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{round}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{3000}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{)),  }\FunctionTok{round}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{3600}\NormalTok{, }\DecValTok{1}\NormalTok{,}\FloatTok{0.2}\NormalTok{)),}
+        \FunctionTok{round}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{2400}\NormalTok{, }\DecValTok{0}\NormalTok{,}\FloatTok{0.8}\NormalTok{)),}\FunctionTok{round}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{, }\SpecialCharTok{{-}}\FloatTok{0.6}\NormalTok{,}\DecValTok{2}\NormalTok{)))}
+      \CommentTok{\# normalised gene expression}
+\NormalTok{x2 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(d2, }\AttributeTok{nrow=}\DecValTok{100}\NormalTok{, }\AttributeTok{ncol=}\DecValTok{100}\NormalTok{)}
+\NormalTok{d3 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{round}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{3000}\NormalTok{, }\DecValTok{10}\NormalTok{,}\DecValTok{1}\NormalTok{)),  }\FunctionTok{round}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{3600}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{9}\NormalTok{)),}
+        \FunctionTok{round}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{2400}\NormalTok{, }\DecValTok{12}\NormalTok{,}\FloatTok{0.8}\NormalTok{)),}\FunctionTok{round}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{, }\DecValTok{13}\NormalTok{,}\FloatTok{0.6}\NormalTok{))) }\CommentTok{\# binding data}
+\NormalTok{x3 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(d3, }\AttributeTok{nrow=}\DecValTok{100}\NormalTok{, }\AttributeTok{ncol=}\DecValTok{100}\NormalTok{)}
+\NormalTok{d4 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{round}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{3000}\NormalTok{, }\DecValTok{20}\NormalTok{,}\DecValTok{4}\NormalTok{)),  }\FunctionTok{round}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{3600}\NormalTok{, }\DecValTok{18}\NormalTok{,}\FloatTok{4.9}\NormalTok{)),}
+        \FunctionTok{round}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{2400}\NormalTok{, }\DecValTok{21}\NormalTok{,}\FloatTok{4.8}\NormalTok{)),}\FunctionTok{round}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{, }\DecValTok{23}\NormalTok{,}\FloatTok{2.6}\NormalTok{)))}
+      \CommentTok{\# immune response INFg}
+\NormalTok{x4 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(d4, }\AttributeTok{nrow=}\DecValTok{100}\NormalTok{, }\AttributeTok{ncol=}\DecValTok{100}\NormalTok{)}
+\NormalTok{list1 }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\AttributeTok{DNA=}\NormalTok{x1, }\AttributeTok{RNA=}\NormalTok{x2, }\AttributeTok{Binding=}\NormalTok{x3, }\AttributeTok{INFg=}\NormalTok{x4)}
+\FunctionTok{str}\NormalTok{(list1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## List of 4
+##  $ DNA    : num [1:100, 1:100] 1 1 1 0 0 1 1 0 1 0 ...
+##  $ RNA    : num [1:100, 1:100] -1 -3 5 -9 0 -12 5 5 -4 0 ...
+##  $ Binding: num [1:100, 1:100] 9 11 9 9 10 10 10 11 12 9 ...
+##  $ INFg   : num [1:100, 1:100] 23 18 28 20 30 20 21 15 19 19 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#install.packages("omicade4")}
+\FunctionTok{library}\NormalTok{(omicade4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: ade4
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'ade4' was built under R version 4.1.2
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'ade4'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:mixOmics':
+## 
+##     nipals
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'omicade4'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:mixOmics':
+## 
+##     plotVar, selectVar
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mcia1 }\OtherTok{\textless{}{-}} \FunctionTok{mcia}\NormalTok{(list1, }\AttributeTok{svd=}\NormalTok{T)}
+\NormalTok{colcode }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"A"}\NormalTok{,}\DecValTok{30}\NormalTok{), }\FunctionTok{rep}\NormalTok{(}\StringTok{"B"}\NormalTok{,}\DecValTok{36}\NormalTok{), }\FunctionTok{rep}\NormalTok{(}\StringTok{"C"}\NormalTok{,}\DecValTok{24}\NormalTok{), }\FunctionTok{rep}\NormalTok{(}\StringTok{"D"}\NormalTok{,}\DecValTok{10}\NormalTok{))}
+\FunctionTok{str}\NormalTok{(colcode)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  chr [1:100] "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" "A" ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pdf}\NormalTok{(}\StringTok{"Figure2\_mcia.pdf"}\NormalTok{,}\AttributeTok{width=}\DecValTok{7}\NormalTok{, }\AttributeTok{height=}\DecValTok{7}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(mcia1, }\AttributeTok{sample.color=}\FunctionTok{as.factor}\NormalTok{(colcode), }\AttributeTok{sample.lab=}\NormalTok{F, }\AttributeTok{sample.legend=}\NormalTok{F,}
+     \AttributeTok{df.color=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{)}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## null device 
+##           1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }
+
+\CommentTok{\#install.packages("r.jive")}
+\FunctionTok{library}\NormalTok{(r.jive)}
+\NormalTok{j1 }\OtherTok{\textless{}{-}} \FunctionTok{jive}\NormalTok{(list1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Estimating  joint and individual ranks via permutation...
+## Running JIVE algorithm for ranks:
+## joint rank: 1 , individual ranks: 1 21 24 1 
+## JIVE algorithm converged after  30  iterations.
+## Re-estimating  joint and individual ranks via permutation...
+## Running JIVE algorithm for ranks:
+## joint rank: 1 , individual ranks: 0 21 24 0 
+## JIVE algorithm converged after  11  iterations.
+## Re-estimating  joint and individual ranks via permutation...
+## Final joint rank: 1 , final individual ranks: 0 21 24 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(j1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $Method
+## [1] "perm"
+## 
+## $Ranks
+##      Source    Rank
+## [1,] "Joint"   "1" 
+## [2,] "DNA"     "0" 
+## [3,] "RNA"     "21"
+## [4,] "Binding" "24"
+## [5,] "INFg"    "0" 
+## 
+## $Variance
+##              DNA   RNA Binding INFg
+## Joint      0.036 0.025   0.021 0.12
+## Individual 0.000 0.818   0.832 0.00
+## Residual   0.964 0.157   0.146 0.88
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{r.jive}\SpecialCharTok{::}\FunctionTok{showVarExplained}\NormalTok{(j1)}
+\FunctionTok{plot.jive}\NormalTok{(j1,}\AttributeTok{type=}\StringTok{"heat"}\NormalTok{)}
+
+\CommentTok{\# devtools::install\_github("idc9/r\_jive")}
+\FunctionTok{library}\NormalTok{(ajive)}
+\CommentTok{\# sample a toy dataset with true joint rank of 1}
+\NormalTok{blocks }\OtherTok{\textless{}{-}} \FunctionTok{sample\_toy\_data}\NormalTok{(}\AttributeTok{n=}\DecValTok{200}\NormalTok{, }\AttributeTok{dx=}\DecValTok{100}\NormalTok{, }\AttributeTok{dy=}\DecValTok{500}\NormalTok{)}
+\FunctionTok{str}\NormalTok{(blocks) }\CommentTok{\# list with 2 matrices }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## List of 2
+##  $ 1: num [1:200, 1:100] -1834 1995 1584 675 -2699 ...
+##  $ 2: num [1:200, 1:500] -0.237 -0.758 -0.74 -1.015 -0.774 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data\_blocks\_heatmap}\NormalTok{(blocks, }\AttributeTok{show\_color\_bar=}\ConstantTok{FALSE}\NormalTok{)}
+\NormalTok{initial\_signal\_ranks }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{) }\CommentTok{\# set by looking at scree plots}
+\NormalTok{jive\_results }\OtherTok{\textless{}{-}} \FunctionTok{ajive}\NormalTok{(blocks, initial\_signal\_ranks, }
+                      \AttributeTok{n\_wedin\_samples =} \DecValTok{100}\NormalTok{, }\AttributeTok{n\_rand\_dir\_samples =} \DecValTok{100}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in if (is.na(joint_scores)) {: the condition has length > 1 and only
+## the first element will be used
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in if (is.na(joint_scores)) {: the condition has length > 1 and only
+## the first element will be used
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in if (is.na(joint_scores)) {: the condition has length > 1 and only
+## the first element will be used
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in if (is.na(joint_scores)) {: the condition has length > 1 and only
+## the first element will be used
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jive\_results}\SpecialCharTok{$}\NormalTok{joint\_rank }\CommentTok{\# estimated joint rank}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{decomposition\_heatmaps}\NormalTok{(blocks, jive\_results)}
+\CommentTok{\#  AJIVE separates the joint and}
+\CommentTok{\#  individual signals for this toy data set.}
+
+\FunctionTok{data\_blocks\_heatmap}\NormalTok{(list1, }\AttributeTok{show\_color\_bar=}\NormalTok{T)}
+\FunctionTok{str}\NormalTok{(list1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## List of 4
+##  $ DNA    : num [1:100, 1:100] 1 1 1 0 0 1 1 0 1 0 ...
+##  $ RNA    : num [1:100, 1:100] -1 -3 5 -9 0 -12 5 5 -4 0 ...
+##  $ Binding: num [1:100, 1:100] 9 11 9 9 10 10 10 11 12 9 ...
+##  $ INFg   : num [1:100, 1:100] 23 18 28 20 30 20 21 15 19 19 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jive\_results }\OtherTok{\textless{}{-}} \FunctionTok{ajive}\NormalTok{(list1, }\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{), }\AttributeTok{n\_wedin\_samples =} \DecValTok{100}\NormalTok{,}
+                      \AttributeTok{n\_rand\_dir\_samples =} \DecValTok{100}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in if (is.na(joint_scores)) {: the condition has length > 1 and only
+## the first element will be used
+
+## Warning in if (is.na(joint_scores)) {: the condition has length > 1 and only
+## the first element will be used
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in if (is.na(joint_scores)) {: the condition has length > 1 and only
+## the first element will be used
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in if (is.na(joint_scores)) {: the condition has length > 1 and only
+## the first element will be used
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in if (is.na(joint_scores)) {: the condition has length > 1 and only
+## the first element will be used
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in if (is.na(joint_scores)) {: the condition has length > 1 and only
+## the first element will be used
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in if (is.na(joint_scores)) {: the condition has length > 1 and only
+## the first element will be used
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in if (is.na(joint_scores)) {: the condition has length > 1 and only
+## the first element will be used
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(jive\_results)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## List of 4
+##  $ block_decomps :List of 4
+##   ..$ :List of 3
+##   .. ..$ individual:List of 5
+##   .. .. ..$ d   : num [1:3] 9.29 9.09 8.97
+##   .. .. ..$ u   : num [1:100, 1:3] -0.15338 0.16194 -0.00909 0.04262 0.06316 ...
+##   .. .. ..$ v   : num [1:100, 1:3] -0.026604 -0.09082 0.214032 0.10702 -0.000136 ...
+##   .. .. ..$ full: num [1:100, 1:100] 0.0191 -0.0746 0.0385 0.0466 -0.0484 ...
+##   .. .. ..$ rank: int 3
+##   .. ..$ joint     :List of 5
+##   .. .. ..$ d   : num 42.9
+##   .. .. ..$ u   : num [1:100, 1] -0.1144 -0.1197 -0.1055 -0.0931 -0.1059 ...
+##   .. .. ..$ v   : num [1:100, 1] -0.113 -0.12 -0.105 -0.138 -0.118 ...
+##   .. .. ..$ full: num [1:100, 1:100] 0.556 0.582 0.513 0.453 0.515 ...
+##   .. .. ..$ rank: int 1
+##   .. ..$ noise     : num [1:100, 1:100] 0.425 0.493 0.448 -0.499 -0.466 ...
+##   ..$ :List of 3
+##   .. ..$ individual:List of 5
+##   .. .. ..$ d   : num 76.7
+##   .. .. ..$ u   : num [1:100, 1] 0.1706 -0.1001 -0.1219 0.1302 -0.0905 ...
+##   .. .. ..$ v   : num [1:100, 1] -0.15574 0.28883 -0.15687 0.00322 -0.15788 ...
+##   .. .. ..$ full: num [1:100, 1:100] -2.04 1.2 1.46 -1.56 1.08 ...
+##   .. .. ..$ rank: int 1
+##   .. ..$ joint     :List of 5
+##   .. .. ..$ d   : num 92.4
+##   .. .. ..$ u   : num [1:100, 1] -0.1144 -0.1197 -0.1055 -0.0931 -0.1059 ...
+##   .. .. ..$ v   : num [1:100, 1] 0.1586 0.133 0.1207 0.0741 0.1476 ...
+##   .. .. ..$ full: num [1:100, 1:100] -1.68 -1.75 -1.55 -1.36 -1.55 ...
+##   .. .. ..$ rank: int 1
+##   .. ..$ noise     : num [1:100, 1:100] 2.71 -2.44 5.09 -6.08 0.47 ...
+##   ..$ :List of 3
+##   .. ..$ individual:List of 5
+##   .. .. ..$ d   : num [1:3] 152 138 130
+##   .. .. ..$ u   : num [1:100, 1:3] -0.08613 -0.09065 -0.00243 0.21758 0.03782 ...
+##   .. .. ..$ v   : num [1:100, 1:3] 0.046 0.0637 0.0587 0.0524 0.0599 ...
+##   .. .. ..$ full: num [1:100, 1:100] -0.4961 -0.68 -0.0417 1.5047 0.0644 ...
+##   .. .. ..$ rank: int 3
+##   .. ..$ joint     :List of 5
+##   .. .. ..$ d   : num 1111
+##   .. .. ..$ u   : num [1:100, 1] -0.1144 -0.1197 -0.1055 -0.0931 -0.1059 ...
+##   .. .. ..$ v   : num [1:100, 1] -0.09 -0.0891 -0.0886 -0.0886 -0.0882 ...
+##   .. .. ..$ full: num [1:100, 1:100] 11.44 11.97 10.55 9.31 10.59 ...
+##   .. .. ..$ rank: int 1
+##   .. ..$ noise     : num [1:100, 1:100] -1.941 -0.286 -1.511 -1.818 -0.654 ...
+##   ..$ :List of 3
+##   .. ..$ individual:List of 5
+##   .. .. ..$ d   : num [1:4] 231.6 87 85.8 82.9
+##   .. .. ..$ u   : num [1:100, 1:4] -0.1082 -0.1371 -0.0622 0.0681 -0.0528 ...
+##   .. .. ..$ v   : num [1:100, 1:4] 0.0924 0.1087 0.1198 0.0726 0.1128 ...
+##   .. .. ..$ full: num [1:100, 1:100] -1.948 -3.848 -0.479 1.007 -1.238 ...
+##   .. .. ..$ rank: int 4
+##   .. ..$ joint     :List of 5
+##   .. .. ..$ d   : num 1979
+##   .. .. ..$ u   : num [1:100, 1] -0.1144 -0.1197 -0.1055 -0.0931 -0.1059 ...
+##   .. .. ..$ v   : num [1:100, 1] -0.1021 -0.104 -0.1005 -0.0971 -0.1051 ...
+##   .. .. ..$ full: num [1:100, 1:100] 23.1 24.2 21.3 18.8 21.4 ...
+##   .. .. ..$ rank: int 1
+##   .. ..$ noise     : num [1:100, 1:100] 1.83 -2.34 7.15 0.17 9.84 ...
+##  $ joint_scores  : num [1:100, 1] 0.1144 0.1197 0.1055 0.0931 0.1059 ...
+##  $ joint_rank    : int 1
+##  $ joint_rank_sel:List of 5
+##   ..$ obs_svals              : num [1:2] 1.96 1.18
+##   ..$ wedin                  :List of 3
+##   .. ..$ block_wedin_samples : num [1:4, 1:100] 1 1 1 1 1 1 1 1 1 1 ...
+##   .. ..$ wedin_samples       : num [1:100] 0 0 0 0 0 0 0 0 0 0 ...
+##   .. ..$ wedin_svsq_threshold: Named num 0
+##   .. .. ..- attr(*, "names")= chr "5%"
+##   ..$ rand_dir               :List of 2
+##   .. ..$ rand_dir_samples       : num [1:100] 1.6 1.49 1.45 1.45 1.4 ...
+##   .. ..$ rand_dir_svsq_threshold: Named num 1.68
+##   .. .. ..- attr(*, "names")= chr "95%"
+##   ..$ overall_sv_sq_threshold: num 1.68
+##   ..$ joint_rank_estimate    : int 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{get\_block\_scores}\NormalTok{(jive\_results, }\DecValTok{2}\NormalTok{, }\StringTok{"joint"}\NormalTok{, }\AttributeTok{normalized=}\NormalTok{T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##               [,1]
+##   [1,] -0.11437267
+##   [2,] -0.11966115
+##   [3,] -0.10552305
+##   [4,] -0.09313548
+##   [5,] -0.10589149
+##   [6,] -0.10370621
+##   [7,] -0.09249572
+##   [8,] -0.08875064
+##   [9,] -0.10096952
+##  [10,] -0.11043143
+##  [11,] -0.10665079
+##  [12,] -0.10209211
+##  [13,] -0.12694488
+##  [14,] -0.10419417
+##  [15,] -0.09438735
+##  [16,] -0.10647041
+##  [17,] -0.10163350
+##  [18,] -0.09889745
+##  [19,] -0.09615222
+##  [20,] -0.08461836
+##  [21,] -0.09796597
+##  [22,] -0.09186978
+##  [23,] -0.09270462
+##  [24,] -0.11630697
+##  [25,] -0.10394138
+##  [26,] -0.11296621
+##  [27,] -0.10624568
+##  [28,] -0.10758359
+##  [29,] -0.10628875
+##  [30,] -0.09165257
+##  [31,] -0.09916154
+##  [32,] -0.09966921
+##  [33,] -0.10043138
+##  [34,] -0.09590721
+##  [35,] -0.10237375
+##  [36,] -0.12480230
+##  [37,] -0.10635777
+##  [38,] -0.09711365
+##  [39,] -0.09573701
+##  [40,] -0.08136733
+##  [41,] -0.10435901
+##  [42,] -0.08741854
+##  [43,] -0.08899479
+##  [44,] -0.07652127
+##  [45,] -0.09585429
+##  [46,] -0.08127464
+##  [47,] -0.11013154
+##  [48,] -0.09630696
+##  [49,] -0.07955455
+##  [50,] -0.09989205
+##  [51,] -0.09419508
+##  [52,] -0.11252197
+##  [53,] -0.10263699
+##  [54,] -0.07698975
+##  [55,] -0.11847442
+##  [56,] -0.09832051
+##  [57,] -0.10911831
+##  [58,] -0.09761689
+##  [59,] -0.10668885
+##  [60,] -0.11651780
+##  [61,] -0.09540037
+##  [62,] -0.10679337
+##  [63,] -0.10097209
+##  [64,] -0.09478481
+##  [65,] -0.09859090
+##  [66,] -0.11241450
+##  [67,] -0.09119200
+##  [68,] -0.08453162
+##  [69,] -0.09010101
+##  [70,] -0.08134335
+##  [71,] -0.09673995
+##  [72,] -0.09804316
+##  [73,] -0.09986571
+##  [74,] -0.09195491
+##  [75,] -0.10010714
+##  [76,] -0.12064387
+##  [77,] -0.10197266
+##  [78,] -0.10535227
+##  [79,] -0.10504306
+##  [80,] -0.07329912
+##  [81,] -0.09797410
+##  [82,] -0.08332851
+##  [83,] -0.09773948
+##  [84,] -0.09599737
+##  [85,] -0.10482382
+##  [86,] -0.07220302
+##  [87,] -0.10945156
+##  [88,] -0.08163587
+##  [89,] -0.11903994
+##  [90,] -0.11116361
+##  [91,] -0.07758879
+##  [92,] -0.09527036
+##  [93,] -0.09904654
+##  [94,] -0.10164349
+##  [95,] -0.10965822
+##  [96,] -0.08531122
+##  [97,] -0.12450789
+##  [98,] -0.08554635
+##  [99,] -0.10170943
+## [100,] -0.09018598
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jive\_results}\SpecialCharTok{$}\NormalTok{joint\_rank }\CommentTok{\# estimated joint rank}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pdf}\NormalTok{(}\StringTok{"Figure2\_ajive.pdf"}\NormalTok{,}\AttributeTok{width=}\DecValTok{8}\NormalTok{, }\AttributeTok{height=}\DecValTok{8}\NormalTok{)}
+\FunctionTok{decomposition\_heatmaps}\NormalTok{(list1, jive\_results)}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }
+\DocumentationTok{\#\#\# }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }\AlertTok{\#\#\#}\DocumentationTok{ }
+
+\DocumentationTok{\#\#\# figure 4 \#\#\#\#}
+\FunctionTok{library}\NormalTok{(grid) }
+
+\CommentTok{\# t1 }
+\FunctionTok{png}\NormalTok{(}\StringTok{"x.png"}\NormalTok{, }\AttributeTok{width=}\DecValTok{1500}\NormalTok{, }\AttributeTok{height=}\DecValTok{1300}\NormalTok{) }\CommentTok{\#red}
+\NormalTok{yy }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{2000} \SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{2000}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{200}\NormalTok{)}
+\NormalTok{xx }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(yy}\SpecialCharTok{**}\DecValTok{2}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{50}\NormalTok{)}
+\FunctionTok{heatmap.2}\NormalTok{(xx, }\AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }\AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{,}
+          \AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"pink"}\NormalTok{))(}\DecValTok{256}\NormalTok{),  }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{,}
+        \AttributeTok{RowSideColors =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{,}\StringTok{"black"}\NormalTok{,}\StringTok{"green"}\NormalTok{,}\StringTok{"purple"}\NormalTok{),}\DecValTok{10}\NormalTok{),}
+        \AttributeTok{ColSideColors =}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{, }\StringTok{"grey"}\NormalTok{))(}\DecValTok{50}\NormalTok{))}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{png}\NormalTok{(}\StringTok{"y.png"}\NormalTok{, }\AttributeTok{width=}\DecValTok{1900}\NormalTok{, }\AttributeTok{height=}\DecValTok{1300}\NormalTok{) }\CommentTok{\#red \# t2 }
+\NormalTok{yy }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{2800} \SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{2800}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{100}\NormalTok{)}
+\NormalTok{xx }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(yy}\SpecialCharTok{**}\DecValTok{2}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{70}\NormalTok{)}
+\FunctionTok{heatmap.2}\NormalTok{(xx, }\AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }\AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{,}
+          \AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"darkorange"}\NormalTok{, }\StringTok{"pink"}\NormalTok{))(}\DecValTok{256}\NormalTok{),  }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{,}
+        \AttributeTok{RowSideColors =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{,}\StringTok{"black"}\NormalTok{,}\StringTok{"green"}\NormalTok{,}\StringTok{"purple"}\NormalTok{),}\DecValTok{10}\NormalTok{),}
+        \AttributeTok{ColSideColors =}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"darkgray"}\NormalTok{, }\StringTok{"lightgrey"}\NormalTok{))(}\DecValTok{70}\NormalTok{))}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{png}\NormalTok{(}\StringTok{"z.png"}\NormalTok{, }\AttributeTok{width=}\DecValTok{1800}\NormalTok{, }\AttributeTok{height=}\DecValTok{1300}\NormalTok{) }\CommentTok{\#red \# t3 }
+\NormalTok{yy }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{3440} \SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{3440}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{100}\NormalTok{)}
+\NormalTok{xx }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(yy}\SpecialCharTok{**}\DecValTok{2}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{86}\NormalTok{)}
+\FunctionTok{heatmap.2}\NormalTok{(xx, }\AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }\AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{,}
+          \AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"yellow"}\NormalTok{, }\StringTok{"white"}\NormalTok{))(}\DecValTok{256}\NormalTok{),  }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{,}
+        \AttributeTok{RowSideColors =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{,}\StringTok{"black"}\NormalTok{,}\StringTok{"green"}\NormalTok{,}\StringTok{"purple"}\NormalTok{),}\DecValTok{10}\NormalTok{),}
+        \AttributeTok{ColSideColors =}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{, }\StringTok{"lightgrey"}\NormalTok{))(}\DecValTok{86}\NormalTok{))}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{png}\NormalTok{(}\StringTok{"a.png"}\NormalTok{, }\AttributeTok{width=}\DecValTok{2500}\NormalTok{, }\AttributeTok{height=}\DecValTok{2500}\NormalTok{) }\CommentTok{\#red \# t4}
+\NormalTok{yy }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{3600} \SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{3600}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{180}\NormalTok{)}
+\NormalTok{xx }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(yy}\SpecialCharTok{**}\DecValTok{2}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{90}\NormalTok{)}
+\FunctionTok{heatmap.2}\NormalTok{(xx, }\AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }\AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{,}
+          \AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"darkgreen"}\NormalTok{, }\StringTok{"black"}\NormalTok{))(}\DecValTok{256}\NormalTok{),  }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{,}
+        \AttributeTok{RowSideColors =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{,}\StringTok{"black"}\NormalTok{,}\StringTok{"green"}\NormalTok{,}\StringTok{"purple"}\NormalTok{),}\DecValTok{10}\NormalTok{),}
+        \AttributeTok{ColSideColors =}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{, }\StringTok{"white"}\NormalTok{))(}\DecValTok{90}\NormalTok{))}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{png}\NormalTok{(}\StringTok{"t.png"}\NormalTok{, }\AttributeTok{width=}\DecValTok{800}\NormalTok{, }\AttributeTok{height=}\DecValTok{800}\NormalTok{) }\CommentTok{\#red \# t5}
+\NormalTok{yy }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{100} \SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{220}\NormalTok{)}
+\NormalTok{xx }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(yy}\SpecialCharTok{**}\DecValTok{2}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{)}
+\FunctionTok{heatmap.2}\NormalTok{(xx, }\AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }\AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{,}
+          \AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"lightgreen"}\NormalTok{, }\StringTok{"red"}\NormalTok{))(}\DecValTok{256}\NormalTok{),  }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{,}
+        \AttributeTok{RowSideColors =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"lightgrey"}\NormalTok{),}\DecValTok{10}\NormalTok{),}
+        \AttributeTok{ColSideColors =}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{, }\StringTok{"white"}\NormalTok{))(}\DecValTok{10}\NormalTok{))}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{png}\NormalTok{(}\StringTok{"u.png"}\NormalTok{, }\AttributeTok{width=}\DecValTok{800}\NormalTok{, }\AttributeTok{height=}\DecValTok{1300}\NormalTok{) }\CommentTok{\#red \# t6}
+\NormalTok{yy }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{400} \SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{400}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{180}\NormalTok{)}
+\NormalTok{xx }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(yy}\SpecialCharTok{**}\DecValTok{2}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{10}\NormalTok{)}
+\FunctionTok{heatmap.2}\NormalTok{(xx, }\AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }\AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{,}
+          \AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{, }\StringTok{"purple"}\NormalTok{))(}\DecValTok{256}\NormalTok{),  }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{,}
+        \AttributeTok{RowSideColors =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{,}\StringTok{"black"}\NormalTok{,}\StringTok{"green"}\NormalTok{,}\StringTok{"purple"}\NormalTok{),}\DecValTok{10}\NormalTok{),}
+        \AttributeTok{ColSideColors =}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{, }\StringTok{"white"}\NormalTok{))(}\DecValTok{10}\NormalTok{))}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{png}\NormalTok{(}\StringTok{"v.png"}\NormalTok{, }\AttributeTok{width=}\DecValTok{800}\NormalTok{, }\AttributeTok{height=}\DecValTok{1600}\NormalTok{) }\CommentTok{\#red \# t7}
+\NormalTok{yy }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{990} \SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{990}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{220}\NormalTok{)}
+\NormalTok{xx }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(yy}\SpecialCharTok{**}\DecValTok{2}\NormalTok{, }\DecValTok{90}\NormalTok{, }\DecValTok{11}\NormalTok{)}
+\FunctionTok{heatmap.2}\NormalTok{(xx, }\AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }\AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{,}
+          \AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"purple"}\NormalTok{, }\StringTok{"pink"}\NormalTok{))(}\DecValTok{256}\NormalTok{),  }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{,}
+        \AttributeTok{RowSideColors =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"lightgrey"}\NormalTok{),}\DecValTok{90}\NormalTok{),}
+        \AttributeTok{ColSideColors =}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{, }\StringTok{"white"}\NormalTok{))(}\DecValTok{11}\NormalTok{))}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{png}\NormalTok{(}\StringTok{"w.png"}\NormalTok{, }\AttributeTok{width=}\DecValTok{800}\NormalTok{, }\AttributeTok{height=}\DecValTok{1600}\NormalTok{) }\CommentTok{\#red \# t7}
+\NormalTok{yy }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{50} \SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{50}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{220}\NormalTok{)}
+\NormalTok{xx }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(yy}\SpecialCharTok{**}\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{)}
+\FunctionTok{heatmap.2}\NormalTok{(xx, }\AttributeTok{Colv=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labRow=}\ConstantTok{NA}\NormalTok{, }\AttributeTok{labCol=}\NormalTok{F, }\AttributeTok{scale=}\StringTok{"row"}\NormalTok{, }\AttributeTok{xlab=}\ConstantTok{NULL}\NormalTok{,}
+          \AttributeTok{ylab=}\ConstantTok{NULL}\NormalTok{, }\AttributeTok{col=}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{, }\StringTok{"red"}\NormalTok{))(}\DecValTok{256}\NormalTok{),  }
+        \AttributeTok{sepcolor=}\StringTok{"white"}\NormalTok{, }\AttributeTok{trace=}\FunctionTok{c}\NormalTok{(}\StringTok{"none"}\NormalTok{), }\AttributeTok{key=}\NormalTok{F, }\AttributeTok{dendrogram=}\StringTok{"none"}\NormalTok{,}
+        \AttributeTok{RowSideColors =} \FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"blue"}\NormalTok{))(}\DecValTok{5}\NormalTok{),}
+        \AttributeTok{ColSideColors =}\FunctionTok{colorRampPalette}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"darkgrey"}\NormalTok{, }\StringTok{"lightgrey"}\NormalTok{))(}\DecValTok{10}\NormalTok{))}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# end}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}
